@@ -1,2 +1,3 @@
 ---
 # vars file for openbsd.jenkins
+ver: "62"

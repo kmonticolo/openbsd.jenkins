@@ -1,0 +1,7 @@
+---
+
+- name: install jenkins
+  openbsd_pkg:
+    name: jenkins-2.73
+    state: latest
+

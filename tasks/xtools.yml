@@ -1,3 +1,8 @@
+---
+- setup:
+- name: include vars
+  include_vars:
+    dir: '../vars'
 - name: install packages
   openbsd_pkg:
     name: "{{ item }}"
@@ -8,14 +13,14 @@
 
 - name: Unarchive xbase
   unarchive:
-    src: ftp://ftp.icm.edu.pl/pub/OpenBSD/{{ ansible_kernel }}/{{ ansible_architecture }}/xbase61.tgz
+    src: ftp://ftp.icm.edu.pl/pub/OpenBSD/{{ ansible_kernel }}/{{ ansible_architecture }}/xbase{{ ver }}.tgz
     dest: /
     remote_src: yes
     creates: /usr/X11R6/lib
 
 - name: Unarchive xfont
   unarchive:
-    src: ftp://ftp.icm.edu.pl/pub/OpenBSD/{{ ansible_kernel }}/{{ ansible_architecture }}/xfont61.tgz
+    src: ftp://ftp.icm.edu.pl/pub/OpenBSD/{{ ansible_kernel }}/{{ ansible_architecture }}/xfont{{ ver }}.tgz
     dest: /
     remote_src: yes
     creates: /usr/X11R6/lib/X11/fonts/

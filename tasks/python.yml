@@ -1,2 +1,2 @@
-- name: Bootstrap a legacy python 2.4 host
+- name: Install python as a prerequisite
   raw: "[[ -x /usr/bin/python ]] || pkg_add py-simplejson; ln -sf /usr/local/bin/python2.7 /usr/bin/python"
